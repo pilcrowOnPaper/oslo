@@ -218,8 +218,8 @@ interface JWTProperties {
 
 export interface JWT extends JWTProperties {
 	value: string;
-	header: object;
-	payload: object;
+	header: Record<string, any>;
+	payload: Record<string, any>;
 	parts: [header: string, payload: string, signature: string];
 }
 
