@@ -89,8 +89,16 @@
 		"typescript": "^5.2.2",
 		"vitest": "^0.34.6"
 	},
-	"dependencies": {
+	"peerDependencies": {
 		"@node-rs/argon2": "1.7.0",
 		"@node-rs/bcrypt": "1.9.0"
+	},
+	"peerDependenciesMeta": {
+		"@node-rs/argon2": {
+			"optional": true
+		},
+		"@node-rs/bcrypt": {
+			"optional": true
+		}
 	}
 }
