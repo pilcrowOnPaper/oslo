@@ -1,44 +1,26 @@
 # oslo
 
-## 1.2.0
+## 2.0.0-next.0
 
-### Minor changes
+## Major changes
 
-- Feat: Add `codeChallengeMethod` option to `OAuth2Client.createAuthorizationURL()` ([#29](https://github.com/pilcrowOnPaper/oslo/pull/29))
+- Breaking: Update `OAuth2RequestError`
+- Breaking: Update `OAuth2Client`
+- Breaking: Remove `oslo/password`
+- Breaking: Remove `oslo/request`
+- Breaking: Update `createJWT()` and `validateJWT()` parameters
+- Breaking: Replace `oslo/webauthn` with `oslo/passkey`
+- Breaking: Rename `createDate()` to `addToDate()`
+- Breaking: Remove `encodeBase32()`, `decodeBase32()`, `encodeBase64()`, `decodeBase64()`, `encodeBase64url()`, and `decodeBase64url()`,
+- Breaking: Functions only accept `Uint8Array` instead of `TypedArray | ArrayBuffer`
 
-## 1.1.3
+## Minor changes
 
-### Patch changes
-
-- Update dependencies. ([#51](https://github.com/pilcrowOnPaper/oslo/pull/51))
-
-## 1.1.2
-
-### Patch changes
-
-- Export OAuth2 token response interface ([#45](https://github.com/pilcrowOnPaper/oslo/pull/45))
-- Fix client data JSON validation
-
-## 1.1.1
-
-### Patch changes
-
-- Improve `base64.encode()` performance
-- Improve `base32.encode()` performance. ([#40](https://github.com/pilcrowOnPaper/oslo/pull/40))
-
-## 1.1.0
-
-### Minor changes
-
-- Deprecate `encodeBase32()`, `decodeBase32()`, `encodeBase64`, `decodeBase64()`, `encodeBase64url()`, `decodeBase64url()`. ([#35](https://github.com/pilcrowOnPaper/oslo/pull/35))
-- Feat: Add `Base64Encoding`, `Base32Encoding`, `base16`, `base32`, `base32hex`, `base64`, `base64url`. ([#35](https://github.com/pilcrowOnPaper/oslo/pull/35))
-
-## 1.0.4
-
-### Patch changes
-
-- Fix: Export `TimeSpanUnit` ([#30](https://github.com/pilcrowOnPaper/oslo/pull/30))
-
-## 1.0.3
-
-- Pin `@node-rs/argon2` and `@node-rs/bcrypt` versions [#26](https://github.com/pilcrowOnPaper/oslo/pull/26)
+- Feat: Add `SigningAlgorithm` interface
+- Feat: Add `createJWTHeader()` and `createJWTPayload()`
+- Feat: `sha1()`, `sha256()`, `sha384()`, and `sha512()` is synchronous
+- Feat: Add `TokenRevocationClient`, `TokenRevocationRetryError`, and `TokenRevocationRequestContext`
+- Feat: Add `oslo/binary`
+- Feat: Add `OAuth2RequestError`
+- Feat: Add `OAuth2RequestContext`, `AccessTokenRequestContext`, `RefreshTokenRequestContext`, and `OAuth2Request`
+- Feat: Add `generateRandomBoolean()`
