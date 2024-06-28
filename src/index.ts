@@ -45,6 +45,10 @@ export function createDate(timeSpan: TimeSpan): Date {
 	return new Date(Date.now() + timeSpan.milliseconds());
 }
 
+export function createDateFrom(date: Date, timeSpan: TimeSpan): Date {
+	return new Date(date.getTime() + timeSpan.milliseconds());
+}
+
 export type TypedArray =
 	| Uint8Array
 	| Int8Array
