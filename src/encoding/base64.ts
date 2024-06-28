@@ -1,4 +1,3 @@
-import type { TypedArray } from "../index.js";
 import type { Encoding } from "./index.js";
 
 export class Base64Encoding implements Encoding {
@@ -109,36 +108,3 @@ export const base64 = new Base64Encoding(
 export const base64url = new Base64Encoding(
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 );
-
-/** @deprecated Use `base64.encode()` instead */
-export function encodeBase64(
-	data: ArrayBuffer | TypedArray,
-	options?: {
-		padding?: boolean;
-	}
-): string {
-	return base64.encode(new Uint8Array(data), {
-		includePadding: options?.padding ?? true
-	});
-}
-
-/** @deprecated Use `base64.decode()` instead */
-export function decodeBase64(data: string): Uint8Array {
-	return base64.decode(data, {
-		strict: false
-	});
-}
-
-/** @deprecated Use `base64url.encode()` instead */
-export function encodeBase64url(data: ArrayBuffer | TypedArray): string {
-	return base64.encode(new Uint8Array(data), {
-		includePadding: false
-	});
-}
-
-/** @deprecated Use `base64url.decode()` instead */
-export function decodeBase64url(data: string): Uint8Array {
-	return base64url.decode(data, {
-		strict: false
-	});
-}

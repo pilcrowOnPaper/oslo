@@ -12,7 +12,7 @@ Creates a new [key URI](https://github.com/google/google-authenticator/wiki/Key-
 function createHOTPKeyURI(
 	issuer: string,
 	accountName: string,
-	secret: ArrayBuffer | TypedArray,
+	secret: Uint8Array,
 	options?: {
 		counter?: number;
 		digits?: number;

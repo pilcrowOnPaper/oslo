@@ -27,6 +27,6 @@ function constructor(alphabet: string): this;
 import { Base32Encoding } from "oslo/encoding";
 
 const base32 = new Base32Encoding("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567");
-const encoded = base32.encode(new Uint8Array(8));
-const decoded = base32.encode(encoded);
+const encoded = base32.encode(data);
+const decoded = base32.decode(encoded);
 ```

@@ -8,15 +8,14 @@
 			"title": "API reference",
 			"pages": [
 				["oslo", "/reference/main"],
+				["oslo/binary", "/reference/binary"],
 				["oslo/cookie", "/reference/cookie"],
 				["oslo/crypto", "/reference/crypto"],
 				["oslo/encoding", "/reference/encoding"],
 				["oslo/jwt", "/reference/jwt"],
 				["oslo/oauth2", "/reference/oauth2"],
 				["oslo/otp", "/reference/otp"],
-				["oslo/password", "/reference/password"],
-				["oslo/request", "/reference/request"],
-				["oslo/webauthn", "/reference/webauthn"]
+				["oslo/passkey", "/reference/passkey"]
 			]
 		},
 		{

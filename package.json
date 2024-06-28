@@ -17,20 +17,22 @@
 	],
 	"exports": {
 		".": "./dist/index.js",
+		"./binary": "./dist/binary/index.js",
 		"./cookie": "./dist/cookie/index.js",
 		"./crypto": "./dist/crypto/index.js",
 		"./encoding": "./dist/encoding/index.js",
 		"./jwt": "./dist/jwt/index.js",
 		"./oauth2": "./dist/oauth2/index.js",
 		"./otp": "./dist/otp/index.js",
-		"./password": "./dist/password/index.js",
-		"./request": "./dist/request/index.js",
-		"./webauthn": "./dist/webauthn/index.js"
+		"./passkey": "./dist/passkey/index.js"
 	},
 	"typesVersions": {
 		"*": {
 			".": [
 				"dist/index.d.ts"
+			],
+			"binary": [
+				"dist/binary/index.d.ts"
 			],
 			"cookie": [
 				"dist/cookie/index.d.ts"
@@ -50,14 +52,8 @@
 			"otp": [
 				"dist/otp/index.d.ts"
 			],
-			"password": [
-				"dist/password/index.d.ts"
-			],
-			"request": [
-				"dist/request/index.d.ts"
-			],
-			"webauthn": [
-				"dist/webauthn/index.d.ts"
+			"passkey": [
+				"dist/passkey/index.d.ts"
 			]
 		}
 	},
@@ -67,6 +63,7 @@
 		"jwt",
 		"crypto",
 		"webauthn",
+		"passkey",
 		"otp",
 		"encoding",
 		"auth",
@@ -83,14 +80,10 @@
 		"@types/node": "^20.8.6",
 		"@typescript-eslint/eslint-plugin": "^6.7.5",
 		"@typescript-eslint/parser": "^6.7.5",
-		"auri": "1.0.2",
+		"auri": "^2.0.0",
 		"eslint": "^8.51.0",
 		"prettier": "^3.0.3",
 		"typescript": "^5.2.2",
 		"vitest": "^0.34.6"
-	},
-	"dependencies": {
-		"@node-rs/argon2": "1.7.0",
-		"@node-rs/bcrypt": "1.9.0"
 	}
 }

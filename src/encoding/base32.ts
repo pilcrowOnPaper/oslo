@@ -1,4 +1,3 @@
-import type { TypedArray } from "../index.js";
 import type { Encoding } from "./index.js";
 
 export class Base32Encoding implements Encoding {
@@ -118,22 +117,3 @@ export class Base32Encoding implements Encoding {
 
 export const base32 = new Base32Encoding("ABCDEFGHIJKLMNOPQRSTUVWXYZ234567");
 export const base32hex = new Base32Encoding("0123456789ABCDEFGHIJKLMNOPQRSTUV");
-
-/** @deprecated Use `base32.encode()` instead */
-export function encodeBase32(
-	data: ArrayBuffer | TypedArray,
-	options?: {
-		padding?: boolean;
-	}
-): string {
-	return base32.encode(new Uint8Array(data), {
-		includePadding: options?.padding ?? true
-	});
-}
-
-/** @deprecated Use `base32.decode()` instead */
-export function decodeBase32(data: string): Uint8Array {
-	return base32.decode(data, {
-		strict: false
-	});
-}

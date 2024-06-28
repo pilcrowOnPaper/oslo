@@ -12,11 +12,7 @@ Parses a JWT string and validates it, including the signature, expiration, and n
 //$ JWTAlgorithm=/reference/jwt/JWTAlgorithm
 //$ TimeSpan=/reference/main/TimeSpan
 //$ JWT=/reference/jwt/JWT
-function validateJWT(
-	algorithm: JWTAlgorithm,
-	key: ArrayBuffer | TypedArray,
-	jwt: string
-): Promise<$$JWT>;
+function validateJWT(algorithm: JWTAlgorithm, key: Uint8Array, jwt: string): Promise<$$JWT>;
 ```
 
 ### Parameters
@@ -32,6 +28,8 @@ import { validateJWT } from "oslo/jwt";
 
 try {
 	const jwt = validateJWT(
+		"HS256",
+		key,
 		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtZXNzYWdlIjoiaGVsbG8ifQ.yP03DaEblJkk9mR-Y5L7YCMzJgHL-RDPx90aXz-cuAI"
 	);
 	const message = jwt.payload.message;

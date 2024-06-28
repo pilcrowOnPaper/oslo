@@ -1,5 +1,3 @@
-import type { TypedArray } from "../index.js";
-
 const hexAlphabet = "0123456789abcdef";
 
 const hexDecodeMap = new Map<string, number>([
@@ -29,13 +27,12 @@ const hexDecodeMap = new Map<string, number>([
 	["f", 15]
 ]);
 
-export function encodeHex(data: ArrayBuffer | TypedArray): string {
-	const bytes = new Uint8Array(data);
+export function encodeHex(data: Uint8Array): string {
 	let result = "";
-	for (let i = 0; i < bytes.length; i++) {
-		const key1 = bytes[i]! >> 4;
+	for (let i = 0; i < data.length; i++) {
+		const key1 = data[i] >> 4;
 		result += hexAlphabet[key1];
-		const key2 = bytes[i]! & 0x0f;
+		const key2 = data[i] & 0x0f;
 		result += hexAlphabet[key2];
 	}
 	return result;

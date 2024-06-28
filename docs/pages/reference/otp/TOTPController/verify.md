@@ -9,7 +9,7 @@ Verifies the TOTP.
 ## Definition
 
 ```ts
-function verify(secretKey: ArrayBuffer | TypedArray, totp: string): Promise<boolean>;
+function verify(secretKey: Uint8Array, totp: string): Promise<boolean>;
 ```
 
 ### Parameters

@@ -9,7 +9,6 @@
 		"resolveJsonModule": true,
 		"moduleDetection": "force",
 		"strict": true,
-		"noUncheckedIndexedAccess": true,
 		"moduleResolution": "NodeNext",
 		"module": "NodeNext"
 	}

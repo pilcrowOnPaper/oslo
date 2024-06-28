@@ -4,17 +4,18 @@ title: "Oslo documentation"
 
 # Oslo documentation
 
-Oslo provides a bunch of auth utilities, including APIs for:
+A collection of auth-related utilities, including:
 
-- Creating JWTs
-- OAuth 2.0 clients
-- Hashing passwords
-- Generating cryptographically strong random values
-- Signing and encoding data
-- Verifying WebAuthn responses
-- Zero dependencies (except for `oslo/password`)
+- `oslo/binary`: Utilities for working with byte arrays
+- `oslo/cookie`: Cookie parsing and serialization
+- `oslo/crypto`: Generate hashes, signatures, and random values
+- `oslo/encoding`: Encode base64, base64url, base32, hex
+- `oslo/jwt`: Create and verify JWTs
+- `oslo/oauth2`: OAuth2 helpers
+- `oslo/otp`: HOTP, TOTP
+- `oslo/passkey`: Verify Web Authentication API attestations and assertions for passkeys
 
-It's lightweight, runtime agnostic, and fully typed.
+It's lightweight, runtime-agnostic, and fully typed.
 
 ## Installation
 
@@ -22,7 +23,7 @@ It's lightweight, runtime agnostic, and fully typed.
 npm install oslo
 ```
 
-This module relies on the Web Crypto API, which is not available by default in Node.js 16 and 18. Make sure to polyfill them:
+For Node.js 16 & 18, you'll need to polyfill the Web Crypto API. This is not required in Node.js 20 or later.
 
 ```ts
 import { webcrypto } from "node:crypto";

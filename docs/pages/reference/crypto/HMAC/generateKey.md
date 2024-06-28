@@ -9,5 +9,5 @@ Generates a new secret key in raw format. See [`HMAC`](/reference/crypto/HMAC) f
 ## Definition
 
 ```ts
-function generateKeyPair(): Promise<ArrayBuffer>;
+function generateKeyPair(): Promise<Uint8Array>;
 ```

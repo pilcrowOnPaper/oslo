@@ -6,6 +6,3 @@ export interface Encoding {
 	encode: (data: Uint8Array) => string;
 	decode: (data: string) => Uint8Array;
 }
-
-export { encodeBase32, decodeBase32 } from "./base32.js";
-export { encodeBase64, encodeBase64url, decodeBase64, decodeBase64url } from "./base64.js";

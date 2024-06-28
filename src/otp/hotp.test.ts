@@ -9,8 +9,8 @@ test("generateHOTP()", async () => {
 		0xa0, 0x8f, 0x8d, 0x26, 0x63, 0x0e, 0xb5, 0x6c, 0xa3, 0xfd, 0xce, 0x6c, 0xc0, 0x0e, 0xf8, 0x65,
 		0x6d, 0x1f, 0xeb, 0xc7, 0x35, 0x92, 0x87, 0x16, 0x3d, 0x11, 0x34, 0x20, 0x00, 0x7a, 0x18, 0x1c
 	]);
-	expect(generateHOTP(secret, 0)).resolves.toBe("173573");
-	expect(generateHOTP(secret, 10)).resolves.toBe("110880");
-	expect(generateHOTP(secret, 100)).resolves.toBe("020803");
-	expect(generateHOTP(secret, 1000)).resolves.toBe("115716");
+	expect(generateHOTP(secret, 0n)).resolves.toBe("173573");
+	expect(generateHOTP(secret, 10n)).resolves.toBe("110880");
+	expect(generateHOTP(secret, 100n)).resolves.toBe("020803");
+	expect(generateHOTP(secret, 1000n)).resolves.toBe("115716");
 });
