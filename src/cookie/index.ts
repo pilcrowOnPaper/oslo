@@ -19,7 +19,7 @@ export function serializeCookie(name: string, value: string, attributes: CookieA
 	if (attributes?.expires !== undefined) {
 		keyValueEntries.push(["Expires", attributes.expires.toUTCString()]);
 	}
-	if (attributes?.httpOnly) {
+	if (attributes?.httpOnly === true) {
 		keyValueEntries.push(["HttpOnly"]);
 	}
 	if (attributes?.maxAge !== undefined) {
@@ -37,7 +37,7 @@ export function serializeCookie(name: string, value: string, attributes: CookieA
 	if (attributes?.sameSite === "strict") {
 		keyValueEntries.push(["SameSite", "Strict"]);
 	}
-	if (attributes?.secure) {
+	if (attributes?.secure === true) {
 		keyValueEntries.push(["Secure"]);
 	}
 	return keyValueEntries.map((pair) => pair.join("=")).join("; ");
@@ -50,7 +50,9 @@ export function parseCookies(header: string): Map<string, string> {
 		const pair = item.split("=");
 		const rawKey = pair[0];
 		const rawValue = pair[1] ?? "";
-		if (!rawKey) continue;
+		if (!rawKey) {
+			continue;
+		}
 		cookies.set(decodeURIComponent(rawKey), decodeURIComponent(rawValue));
 	}
 	return cookies;

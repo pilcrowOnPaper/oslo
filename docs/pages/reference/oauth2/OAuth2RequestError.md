@@ -1,23 +1,41 @@
 ---
 title: "OAuth2RequestError"
-extends: "Error"
 ---
 
 # `OAuth2RequestError`
 
-Error thrown by [`OAuth2Client.validateAuthorizationCode()`](/reference/oauth/OAuth2Client2/validateAuthorizationCode) when the token endpoint returns an error response. See [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749#section-5.2) for a full reference on error messages.
+Extends [`Error`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error).
 
-## Definition
+Thrown when the endpoint returns the error response as defined in [RFC 6749 section 5.2](https://datatracker.ietf.org/doc/html/rfc6749#section-5.2).
+
+## Constructor
 
 ```ts
-interface Properties extends Error {
-	request: Request;
+//$ OAuth2Request=/reference/oauth2/OAuth2Request
+function constructor(
+	request: $$OAuth2Request,
+	options?: {
+		message?: string;
+		description?: string;
+	}
+): this;
+```
+
+### Parameters
+
+- `request`
+- `options`
+  - `message`
+  - `description`
+
+### Properties
+
+```ts
+interface Properties {
+	request: OAuth2Request;
 	description: string | null;
 }
 ```
 
-### Properties
-
-- `message`: OAuth 2.0 error message
 - `request`: The original request
 - `description`: OAuth 2.0 error description

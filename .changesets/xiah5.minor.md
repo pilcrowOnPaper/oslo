@@ -1,0 +1,1 @@
+Feat: Add `generateRandomBoolean()`

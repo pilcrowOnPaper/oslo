@@ -10,8 +10,8 @@ Represents a public/private key pair.
 
 ```ts
 interface KeyPair {
-	publicKey: ArrayBuffer;
-	privateKey: ArrayBuffer;
+	publicKey: Uint8Array;
+	privateKey: Uint8Array;
 }
 ```
 

@@ -9,7 +9,7 @@ Generates a new TOTP.
 ## Definition
 
 ```ts
-function generate(secretKey: ArrayBuffer | TypedArray): Promise<string>;
+function generate(secretKey: Uint8Array): Promise<string>;
 ```
 
 ### Parameters

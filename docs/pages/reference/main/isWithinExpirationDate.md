@@ -20,10 +20,7 @@ function isWithinExpirationDate(expirationDate: Date): boolean;
 ## Example
 
 ```ts
-import { createDate, TimeSpan, isWithinExpirationDate } from "oslo";
-
-const tomorrow = createDate(new TimeSpan(1, "d"));
-const yesterday = createDate(new TimeSpan(-1, "d"));
+import { isWithinExpirationDate } from "oslo";
 
 isWithinExpirationDate(tomorrow); // true
 isWithinExpirationDate(yesterday); // false

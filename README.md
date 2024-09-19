@@ -5,17 +5,16 @@
 
 A collection of auth-related utilities, including:
 
+- `oslo/binary`: Utilities for working with byte arrays
 - `oslo/cookie`: Cookie parsing and serialization
 - `oslo/crypto`: Generate hashes, signatures, and random values
 - `oslo/encoding`: Encode base64, base64url, base32, hex
 - `oslo/jwt`: Create and verify JWTs
 - `oslo/oauth2`: OAuth2 helpers
 - `oslo/otp`: HOTP, TOTP
-- `oslo/password`: Password hashing
-- `oslo/request`: CSRF protection
-- `oslo/webauthn`: Verify Web Authentication API attestations and assertions
+- `oslo/passkey`: Verify Web Authentication API attestations and assertions for passkeys
 
-Aside from `oslo/password`, every module works in any environment, including Node.js, Cloudflare Workers, Deno, and Bun.
+It's lightweight, runtime-agnostic, and fully typed.
 
 Documentation: https://oslo.js.org
 
@@ -29,7 +28,7 @@ yarn add oslo
 
 ## Node.js
 
-For Node.js 16 & 18, you need to polyfill the Web Crypto API. This is not required in Node.js 20.
+For Node.js 16 & 18, you'll need to polyfill the Web Crypto API. This is not required in Node.js 20 or later.
 
 ```ts
 import { webcrypto } from "node:crypto";

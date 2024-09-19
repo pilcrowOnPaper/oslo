@@ -1,0 +1,1 @@
+Feat: Add `SigningAlgorithm` interface

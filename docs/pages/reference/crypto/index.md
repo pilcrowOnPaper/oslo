@@ -10,6 +10,7 @@ Provides light-wrappers around the Web Crypto API for hashing, encryption, creat
 
 - [`alphabet()`](/reference/crypto/alphabet)
 - [`constantTimeEqual()`](/reference/crypto/constantTimeEqual)
+- [`generateRandomBoolean()`](/reference/crypto/generateRandomBoolean)
 - [`generateRandomInteger()`](/reference/crypto/generateRandomInteger)
 - [`generateRandomString()`](/reference/crypto/generateRandomString)
 - [`random()`](/reference/crypto/random)

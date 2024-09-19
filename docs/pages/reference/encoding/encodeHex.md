@@ -9,7 +9,7 @@ Encodes data into lowercase hex based on [RFC 4648 §8](https://datatracker.ietf
 ## Definition
 
 ```ts
-function encodeHex(data: ArrayBuffer | TypedArray): string;
+function encodeHex(data: Uint8Array): string;
 ```
 
 ### Parameters

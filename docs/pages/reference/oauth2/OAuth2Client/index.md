@@ -4,7 +4,9 @@ title: "OAuth2Client"
 
 # `OAuth2Client`
 
-Helper for OAuth 2.0, as defined in [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749). See [`oslo/oauth2`](/reference/oauth2) for a full example.
+Client for OAuth 2.0 authorization code grant type, as defined in [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749). See [`oslo/oauth2`](/reference/oauth2) for a full example.
+
+Use with [`TokenRevocationClient`](/reference/oauth2/TokenRevocationClient) to revoke tokens.
 
 ## Constructor
 
@@ -29,16 +31,22 @@ function constructor(
 
 ## Methods
 
+- [`createAccessTokenRequestContext()`](/reference/oauth2/OAuth2Client/createAccessTokenRequestContext)
 - [`createAuthorizationURL()`](/reference/oauth2/OAuth2Client/createAuthorizationURL)
-- [`refreshAccessToken()`](/reference/oauth2/OAuth2Client/refreshAccessToken)
-- [`validateAuthorizationCode()`](/reference/oauth2/OAuth2Client/validateAuthorizationCode)
+- [`createRefreshTokenRequestContext()`](/reference/oauth2/OAuth2Client/createRefreshTokenRequestContext)
+- [`sendAccessTokenRequest()`](/reference/oauth2/OAuth2Client/sendAccessTokenRequest)
+- [`sendRefreshTokenRequest()`](/reference/oauth2/OAuth2Client/sendRefreshTokenRequest)
 
 ## Properties
 
 ```ts
 interface Properties {
 	clientId: string;
+	authorizeEndpoint: string;
+	tokenEndpoint: string;
 }
 ```
 
 - `clientId`
+- `authorizeEndpoint`
+- `tokenEndpoint`

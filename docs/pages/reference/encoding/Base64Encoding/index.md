@@ -29,6 +29,6 @@ import { Base64Encoding } from "oslo/encoding";
 const base64 = new Base64Encoding(
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 );
-const encoded = base64.encode(new Uint8Array(8));
-const decoded = base64.encode(encoded);
+const encoded = base64.encode(data);
+const decoded = base64.decode(encoded);
 ```

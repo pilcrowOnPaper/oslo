@@ -1,11 +1,11 @@
 import { base32 } from "../encoding/index.js";
 
-import type { TimeSpan, TypedArray } from "../index.js";
+import type { TimeSpan } from "../index.js";
 
 export function createTOTPKeyURI(
 	issuer: string,
 	accountName: string,
-	secret: ArrayBuffer | TypedArray,
+	secret: Uint8Array,
 	options?: {
 		digits?: number;
 		period?: TimeSpan;
@@ -21,7 +21,7 @@ export function createTOTPKeyURI(
 export function createHOTPKeyURI(
 	issuer: string,
 	accountName: string,
-	secret: ArrayBuffer | TypedArray,
+	secret: Uint8Array,
 	options?: {
 		counter?: number;
 		digits?: number;
@@ -37,7 +37,7 @@ function createKeyURIBase(
 	type: "totp" | "hotp",
 	issuer: string,
 	accountName: string,
-	secret: ArrayBuffer | TypedArray,
+	secret: Uint8Array,
 	options?: {
 		digits?: number;
 	}
@@ -46,7 +46,7 @@ function createKeyURIBase(
 	const encodedAccountName = encodeURIComponent(accountName);
 	const baseURI = `otpauth://${type}/${encodedIssuer}:${encodedAccountName}`;
 	const params = new URLSearchParams({
-		secret: base32.encode(new Uint8Array(secret), {
+		secret: base32.encode(secret, {
 			includePadding: false
 		}),
 		issuer
